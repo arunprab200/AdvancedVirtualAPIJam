@@ -182,7 +182,7 @@ query=password’ OR 1=1
 query=5; DROP TABLE USERS;
 ```
 
-When using the above example in a query parameter, make sure the escape spaces with %20. Otherwise your REST client or curl might not allow you to make the call:
+When using the last two of the above examples in a query parameter, make sure to replace spaces with **%20**. Otherwise your REST client or **curl** might not allow you to make the call:
 ```
 query=delete
 query=password’%20OR%201=1
