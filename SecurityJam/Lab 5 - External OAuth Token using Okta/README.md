@@ -19,7 +19,7 @@ Apigee has built in support to implement OAuth 2.0 in the resource owner / passw
 
 # **Pre-requisites**
 
-* You have completed [Lab 3](https://goo.gl/xBMaav). If not, please complete that first.
+* You have completed [Lab 3](https://github.com/kbouwmee/AdvancedVirtualAPIJam/tree/master/SecurityJam/Lab%203%20-%20Securing%20APIs%20with%20OAuth2%20Client%20Credentials). If not, please complete that first.
 
 # **Instructions**
 
@@ -34,7 +34,7 @@ b) The API proxy configuration in Apigee Edge to enforce both end user identity 
 ## End User Configuration in Okta
 
 1. In this lab, we will use a pre-configured Okta instance to authenticate end user identity. To add a new app end user, we will use the Okta User API.
-Invoke the following API request (either from a terminal or [REST client](https://apigee-rest-client.appspot.com/)):
+Invoke the following API request (either from a terminal or [REST client](https://reqbin.com/)):
 ```
 curl -X POST "https://dev-271499-admin.okta.com/api/v1/users?activate=true" -H "Content-Type: application/json" -H "Authorization: SSWS 004LHmN3InpVQ9pOMWjsdb6ZDUmi1IP8_DLjaOlb6Z" -d '{"profile": {"firstName": "<Enter First Name>","lastName": "<Enter Last Name>","email": "<Enter Email ID>","login": "<Enter Email ID>"},"credentials": {"password" : { "value": "<Enter Password>"}}}'
 ```
@@ -163,16 +163,16 @@ Now that we have configured the end user credentials in Okta, and the API Proxy 
 1. (Optional) Navigate to the proxy overview screen of the "oauth-okta-integration" proxy and  start the **Trace** session:
 ![image alt text](./media/StartTraceOAuthProxy.png)
 
-2. Send the following token generation request to the access token endpoint, using a terminal or a [REST client](https://apigee-rest-client.appspot.com):
+2. Send the following token generation request to the access token endpoint, using a terminal or a [REST client](https://reqbin.com/):
 ```
 curl -X POST -H "Accept:application/json" -H "Content-Type:application/x-www-form-urlencoded" -d 'grant_type=password&user={{okta_user}}&password={{okta_password}}&client_id={{client_id}}&client_secret={{client_secret}}' "https://{{org}}-{{env}}.apigee.net/oauth-ext/token"
 ```
 
-![image alt text](./media/RESTClient-OAuthRequest1.png)
-![image alt text](./media/RESTClient-OAuthRequest2.png)
+![image alt text](./media/lab5oktatestheaders.png)
+![image alt text](./media/lab5oktatestbody.png)
 
 Note down the generated access token:
-![image alt text](./media/RESTClient-OAuthResponse.png)
+![image alt text](./media/lab5oktatestresponse.png)
 
 Also, note in the Trace session that the Service Callout policy in the "oauth-okta-integration" proxy is called to validate the end user identity in Okta. On successful authentication, the proxy uses the OAuthV2 policy to generate the access token.
 ![image alt text](./media/TraceResultOAuthProxy.png)
@@ -187,7 +187,7 @@ curl -X GET "http://{{org}}-{{env}}.apigee.net/mock-target-api"
 ```
 
 Notice that an error response is returned since the access token was not sent in the request:
-![image alt text](./media/RESTClient-ProxyResponse.png)
+![image alt text](./media/lab5oktatestnoauth.png)
 
 5. Now, send in an API request with the access token in the Authorization header:
 ```
@@ -195,7 +195,7 @@ curl -X GET -H "Authorization:Bearer {{access token}}" "http://{{org}}-{{env}}.a
 ```
 
 Once the access token is validated, a successful API response is returned:
-![image alt text](./media/RESTClient-ProxyResponseSuccess.png)
+![image alt text](./media/lab5oktatestauth.png)
 
 ## Lab Video
 
