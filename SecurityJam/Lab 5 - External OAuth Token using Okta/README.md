@@ -169,6 +169,12 @@ curl -X POST -H "Accept:application/json" -H "Content-Type:application/x-www-for
 ```
 
 ![image alt text](./media/lab5oktatestheaders.png)
+
+The body can look something like this, but please replace your own username, password, client_id and client_secret:
+```
+user=joop@rtl.nl&password=Sup3rS3cur3&grant_type=password&client_id=X2Cgv3ide0bGpZ9s8jbIacZoDMp0GiEG&client_secret=ymaeUZO63KAGAnjA
+```
+
 ![image alt text](./media/lab5oktatestbody.png)
 
 Note down the generated access token:
