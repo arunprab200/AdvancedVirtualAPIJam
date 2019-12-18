@@ -182,6 +182,13 @@ query=password’ OR 1=1
 query=5; DROP TABLE USERS;
 ```
 
+When using the above example in a query parameter, make sure the escape spaces with %20. Otherwise your REST client or curl might not allow you to make the call:
+```
+query=delete
+query=password’%20OR%201=1
+query=5;%20DROP%20TABLE%20USERS;
+```
+
 You can make this call either using a REST client like the one [here](https://reqbin.com/), or using a terminal command such as **curl**.
 ```
 curl "http://{{your-org}}-{{your-env}}.apigee.net/mock-target-api/ip?query={{insert SQL injection attack here}}"
