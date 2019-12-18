@@ -14,7 +14,7 @@ You have an API that is consumed by third parties. You want to secure that API u
 
 # **Pre-requisites**
 
-* You have completed [Lab 1](https://github.com/aliceinapiland/AdvancedVirtualAPIJam/tree/master/SecurityJam/Lab%201%20Traffic%20Management%20-%20Throttle%20APIs). If not, please complete that first.
+* You have completed [Lab 1](https://github.com/kbouwmee/AdvancedVirtualAPIJam/tree/master/SecurityJam/Lab%201%20Traffic%20Management%20-%20Throttle%20APIs). If not, please complete that first.
 
 # **Instructions**
 
@@ -52,7 +52,7 @@ You have an API that is consumed by third parties. You want to secure that API u
 
 ![image alt text](./media/image_6.png)
 
-* Download the Apigee proxy "**JWT.zip**" that generates and verifies JWT’s [here](https://github.com/aliceinapiland/AdvancedVirtualAPIJam/blob/master/SecurityJam/Lab%204%20-%20JWT/JWT.zip?raw=true).  Then click "**Choose File**", select the “**JWT.zip**” file you just downloaded and click **Next**:
+* Download the Apigee proxy "**JWT.zip**" that generates and verifies JWT’s [here](https://github.com/kbouwmee/AdvancedVirtualAPIJam/blob/master/SecurityJam/Lab%204%20-%20JWT/JWT.zip?raw=true).  Then click "**Choose File**", select the “**JWT.zip**” file you just downloaded and click **Next**:
 
 ![image alt text](./media/image_7.png)
 
@@ -70,11 +70,11 @@ You have an API that is consumed by third parties. You want to secure that API u
 
 * Start by turning on **Trace** for the JWT proxy.
 
-* Then use the Apigee Rest Client: [https://apigee-rest-client.appspot.com/](https://apigee-rest-client.appspot.com/)
+* Then use the Apigee Rest Client: [https://reqbin.com/](https://reqbin.com/)
 
 * POST to https://**{your-org-name}**-test.apigee.net/v1/jwt/token
 
-![image alt text](./media/image_9.png)
+![image alt text](./media/lab4jwtcall.png)
 
 * You should see a token received in HTTP response.  Copy the token value (except for the " “) and review the Trace tool to understand what happened.
 
@@ -88,7 +88,7 @@ You have an API that is consumed by third parties. You want to secure that API u
 
 * In the Header, put "token" and its value
 
-![image alt text](./media/image_11.png)
+![image alt text](./media/lab4token.png)
 
 * If you get a 200 return code, the JWT is valid (as expected).  Again, review the Trace tool to understand what happened.  You can also try to tamper with the JWT (add/remove characters) and invoke the same API call again.  What happens?
 
@@ -108,4 +108,4 @@ Change the JWT token generation policy to include [additional claims](https://do
 
 * [Adding Additional Claims to your JWT](https://docs.apigee.com/api-platform/reference/policies/generate-jwt-policy#additionalclaimsclaim)
 
-Now go to [Lab 5](https://goo.gl/6S2iJr).
+Now go to [Lab 5](https://github.com/kbouwmee/AdvancedVirtualAPIJam/tree/master/SecurityJam/Lab%205%20-%20External%20OAuth%20Token%20using%20Okta).
