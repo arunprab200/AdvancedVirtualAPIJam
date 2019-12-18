@@ -46,11 +46,11 @@ Authorization Header: `SSWS 004LHmN3InpVQ9pOMWjsdb6ZDUmi1IP8_DLjaOlb6Z`
 
 First Name, last name, email, login, and password: provide your own
 
-![image alt text](./media/RESTClient-Okta-User-API-Request1.png)
-![image alt text](./media/RESTClient-Okta-User-API-Request2.png)
+![image alt text](./media/lab5oktacreateuser.png)
+![image alt text](./media/lab5oktacreateuserheaders.png)
 
 This will create an active end user profile in Okta:
-![image alt text](./media/RESTClient-Okta-User-API-Response.png)
+![image alt text](./media/lab5oktacreateusercreated.png)
 
 2. Make note of the Username and Password you provided in the above API request. We will use this to authenticate the app end user's identity.
 
