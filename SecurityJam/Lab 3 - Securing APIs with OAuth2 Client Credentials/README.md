@@ -164,11 +164,11 @@ client_id={{app_client_key}}&client_secret={{app_client_secret}}
 curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: application/json' "https://{{org-name}}-{{env}}.apigee.net/oauth/client_credential/accesstoken?grant_type=client_credentials" -d 'client_id={{app_client_key}}&client_secret={{app_client_secret}}'
 ```
 
-![image alt text](./media/lab3-oauth.png)
+![image alt text](./media/lab3oauth.png)
 
 The response contain the **access_token**:
 
-![image alt text](./media/lab3-oauthresponse.png)
+![image alt text](./media/lab3oauthresponse.png)
 
 You now have an OAuth access token as seen in the body of the HTTP response.  Copy the value of the access_token (not including the " “) as you will need it for the next step.
 
@@ -188,7 +188,7 @@ Authorization: Bearer {{access-token}}
 curl -X GET -H "Authorization: Bearer {{access-token}}" "http://{{org-name}}-{{env}}.apigee.net/mock-target-api"
 ```
 
-![image alt text](./media/lab3-oauthcall.png)
+![image alt text](./media/lab3oauthcall.png)
 
 * If you see "Hello, Guest!" your OAuth token was valid and you’ve received the correct response!  
 
