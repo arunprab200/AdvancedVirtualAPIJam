@@ -23,7 +23,8 @@ In this lab we will see how to use an out of the box traffic management policy, 
 
 ## Deploy an API Proxy
 
-1. An initial Apigee API proxy has been created for you. Download the API proxy [here](https://github.com/aliceinapiland/AdvancedVirtualAPIJam/blob/master/SecurityJam/Lab%201%20Traffic%20Management%20-%20Throttle%20APIs/apiproxy/Mock-Target-API.zip?raw=true).
+1. An initial Apigee API proxy has been created for you. Download the API proxy [here](https://github.com/kbouwmee/AdvancedVirtualAPIJam/blob/master/SecurityJam/Lab%201%20Traffic%20Management%20-%20Throttle%20APIs/apiproxy/Mock-Target-API.zip?raw=true).
+
 
 2. Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Edge management UI. 
 
@@ -164,4 +165,4 @@ That completes this hands-on lesson. In this simple lab you learned how to prote
     * Comparing Rate Limiting Policies - [http://docs.apigee.com/api-services/content/comparing-quota-spike-arrest-and-concurrent-rate-limit-policies](http://docs.apigee.com/api-services/content/comparing-quota-spike-arrest-and-concurrent-rate-limit-policies) 
 
 
-Now go to [Lab-2](https://goo.gl/HvkmFV)
+Now go to [Lab-2](https://github.com/kbouwmee/AdvancedVirtualAPIJam/tree/master/SecurityJam/Lab%202%20-%20Threat%20Protection)
