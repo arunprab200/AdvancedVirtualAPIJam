@@ -90,17 +90,17 @@ Content-Type: application/json
 }
 ```
 
-You can make this call either using a REST client like the one [here](https://apigee-rest-client.appspot.com/), or using a terminal command such as **curl**.
+You can make this call either using a REST client like the one [here](https://reqbin.com/), or using a terminal command such as **curl**.
 ```
 curl -X POST "http://{{your-org}}-{{your-env}}.apigee.net/mock-target-api/echo" -H "Content-Type: application/json" -d '{"field1": "test_value1", "field2": "test_value2", "field3": "test_value3", "field4": "test_value4", "field5": "test_value5", "field6": "test_value6"}'
 ```
 * **Note:** If you are using a REST client, make sure that your HTTP request has a Header name/value pair of `Content-Type: application/json` as shown below
 
-![image alt text](./media/add-json-header.png)
+![image alt text](./media/lab2-contenttype.png)
 
 3. The response received will be an error, since we attempted to send more than 5 fields in the POST request payload.
 
-![image alt text](./media/error-response.png)
+![image alt text](./media/lab2-jsonprotectionerror.png)
 
 We also see that the JSON Threat Protection policy was triggered to return this error response, when we see the Trace screen.
 
@@ -121,14 +121,14 @@ Content-Type: application/json
 }
 ```
 
-You can make this call either using a REST client like the one [here](https://apigee-rest-client.appspot.com/), or using a terminal command such as **curl**.
+You can make this call either using a REST client like the one [here](https://reqbin.com/), or using a terminal command such as **curl**.
 ```
 curl -X POST "http://{{your-org}}-{{your-env}}.apigee.net/mock-target-api/echo" -H "Content-Type: application/json" -d '{"field1": "test_value1", "field2": "test_value2", "field3": "test_value3", "field4": "test_value4", "field5": "test_value5"}'
 ```
 
 3. The response received will be a successful one, since we attempted to send fewer fields in the POST request payload.
 
-![image alt text](./media/success-response.png)
+![image alt text](./media/lab2-jsonprotection.png)
 
 We also see that the JSON Threat Protection policy allowed the request to go through and hit the API target, when we see the Trace screen.
 
@@ -182,16 +182,16 @@ query=password’ OR 1=1
 query=5; DROP TABLE USERS;
 ```
 
-You can make this call either using a REST client like the one [here](https://apigee-rest-client.appspot.com/), or using a terminal command such as **curl**.
+You can make this call either using a REST client like the one [here](https://reqbin.com/), or using a terminal command such as **curl**.
 ```
 curl "http://{{your-org}}-{{your-env}}.apigee.net/mock-target-api/ip?query={{insert SQL injection attack here}}"
 ```
 
-![image alt text](./media/send-sql-injection.png)
+![image alt text](./media/lab2-regularexpressioncall.png)
 
 3. The response received will be an error, since we attempted to send a malicious attack that we have configured our policy to recognize.
 
-![image alt text](./media/sql-injection-blocked.png)
+![image alt text](./media/lab2-regularexpressionerror.png)
 
 We can also confirm from the Trace screen that the Regular Expression Protection policy was triggered to return this error response.
 
