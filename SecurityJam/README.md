@@ -15,9 +15,9 @@ This workshop will be valuable to API developers, architects, and anyone who wan
 ## **Workshop Agenda**
 
 - Introduction to API Security
-- [Lab 1: Throttle your API Traffic to prevent DoS](https://goo.gl/CQ6VnJ)
-- [Lab 2: Protect your APIs against content-based threats](https://goo.gl/t1guSF)
-- [Lab 3: OAuth 2.0 based API security](https://goo.gl/xBMaav)
-- [Lab 4: JWT based API security](https://goo.gl/hgg2Uh)
-- [Lab 5: OAuth 2.0 based API security using an External Identity Platform such as Okta](https://goo.gl/6S2iJr)
+- [Lab 1: Throttle your API Traffic to prevent DoS](https://github.com/kbouwmee/AdvancedVirtualAPIJam/tree/master/SecurityJam/Lab%201%20Traffic%20Management%20-%20Throttle%20APIs)
+- [Lab 2: Protect your APIs against content-based threats](https://github.com/kbouwmee/AdvancedVirtualAPIJam/tree/master/SecurityJam/Lab%202%20-%20Threat%20Protection)
+- [Lab 3: OAuth 2.0 based API security](https://github.com/kbouwmee/AdvancedVirtualAPIJam/tree/master/SecurityJam/Lab%203%20-%20Securing%20APIs%20with%20OAuth2%20Client%20Credentials)
+- [Lab 4: JWT based API security](https://github.com/kbouwmee/AdvancedVirtualAPIJam/tree/master/SecurityJam/Lab%204%20-%20JWT)
+- [Lab 5: OAuth 2.0 based API security using an External Identity Platform such as Okta](https://github.com/kbouwmee/AdvancedVirtualAPIJam/tree/master/SecurityJam/Lab%205%20-%20External%20OAuth%20Token%20using%20Okta)
 - Demo of the Apigee Sense API Security Platform
