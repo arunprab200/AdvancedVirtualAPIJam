@@ -16,7 +16,7 @@ Most typically, the **"client_credentials"** grant type is used when the app is 
 
 # **Pre-requisites**
 
-* You have completed [Lab 1](https://github.com/aliceinapiland/AdvancedVirtualAPIJam/tree/master/SecurityJam/Lab%201%20Traffic%20Management%20-%20Throttle%20APIs). If not, please complete that first.
+* You have completed [Lab 1](https://github.com/kbouwmee/AdvancedVirtualAPIJam/tree/master/SecurityJam/Lab%201%20Traffic%20Management%20-%20Throttle%20APIs). If not, please complete that first.
 
 # **Instructions**
 
@@ -145,7 +145,7 @@ You will now see your list of Apps again.  Click on your **Mock Target App** aga
 
 ## To Test OAuth Token generation and API protection
 
-1. First, send a valid request to the OAuth token endpoint to generate a valid access token. You can send this request either using a REST client like the one [here](https://apigee-rest-client.appspot.com/), or using **curl** in your Linux/Mac terminal. The request to send is:
+1. First, send a valid request to the OAuth token endpoint to generate a valid access token. You can send this request either using a REST client like the one [here](https://reqbin.com/), or using **curl** in your Linux/Mac terminal. The request to send is:
 
 ```
 POST /oauth/client_credential/accesstoken?grant_type=client_credentials HTTP/1.1
@@ -164,11 +164,15 @@ client_id={{app_client_key}}&client_secret={{app_client_secret}}
 curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: application/json' "https://{{org-name}}-{{env}}.apigee.net/oauth/client_credential/accesstoken?grant_type=client_credentials" -d 'client_id={{app_client_key}}&client_secret={{app_client_secret}}'
 ```
 
-![image alt text](./media/image_24.png)
+![image alt text](./media/lab3-oauth.png)
+
+The response contain the **access_token**:
+
+![image alt text](./media/lab3-oauthresponse.png)
 
 You now have an OAuth access token as seen in the body of the HTTP response.  Copy the value of the access_token (not including the " “) as you will need it for the next step.
 
-2. Now, let's test the protected API by passing in the valid access token. You can send this request either using a REST client like the one [here](https://apigee-rest-client.appspot.com/), or using **curl** in your Linux/Mac terminal. The request to send is:
+2. Now, let's test the protected API by passing in the valid access token. You can send this request either using a REST client like the one [here](https://reqbin.com/), or using **curl** in your Linux/Mac terminal. The request to send is:
 
 ```
 GET /mock-target-api HTTP/1.1
@@ -184,7 +188,7 @@ Authorization: Bearer {{access-token}}
 curl -X GET -H "Authorization: Bearer {{access-token}}" "http://{{org-name}}-{{env}}.apigee.net/mock-target-api"
 ```
 
-![image alt text](./media/image_25.png)
+![image alt text](./media/lab3-oauthcall.png)
 
 * If you see "Hello, Guest!" your OAuth token was valid and you’ve received the correct response!  
 
@@ -212,5 +216,5 @@ In this lab you learned how to secure your API using two legged OAuth 2.0 in cli
 
 * Search and Revoke tokens - [https://community.apigee.com/articles/1571/how-to-enable-oauth-20-token-search-and-revocation.html](https://community.apigee.com/articles/1571/how-to-enable-oauth-20-token-search-and-revocation.html)
 
-Now go to [Lab 4](https://goo.gl/m1Ae3k).
+Now go to [Lab 4](https://github.com/kbouwmee/AdvancedVirtualAPIJam/tree/master/SecurityJam/Lab%204%20-%20JWT).
 
